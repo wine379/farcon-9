@@ -1,13 +1,14 @@
+
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-class ThisMonthSales extends React.Component {
+class typeofTrainingsConducted extends React.Component {
     render() {
         return (
             <div className="card mb-4">
                 <div className="card-body">
                     <div className="card-header">
-                        <h5 className="card-title">Last 15 days Sales</h5>
+                        <h5 className="card-title">Types Of Trainings Conducted</h5>
                     </div>
 
                     <ReactEcharts 
@@ -23,7 +24,7 @@ class ThisMonthSales extends React.Component {
     }
 }
 
-ThisMonthSales.defaultProps = {
+typeofTrainingsConducted.defaultProps = {
     data: {
         color: ['#2962ff'],
         tooltip: {
@@ -42,7 +43,7 @@ ThisMonthSales.defaultProps = {
         xAxis: [
             {
                 type : 'category',
-                data : ['Mar 1', 'Mar 2', 'Mar 3', 'Mar 4', 'Mar 5', 'Mar 6', 'Mar 7', 'Mar 8', 'Mar 9', 'Mar 10', 'Mar 11', 'Mar 12', 'Mar 13', 'Mar 14', 'Mar 15'],
+                data : ['Group Dynamics', 'Finacial Literacy', 'Business Management', 'Corparative Management', 'Health Nultrion', 'Safe Guards', 'Skills Training', 'Mindset'],
                 axisTick: {
                     alignWithLabel: true
                 },
@@ -78,10 +79,10 @@ ThisMonthSales.defaultProps = {
         ],
         series: [
             {
-                name:'Month Total',
+                name:'Total Trainings Conducted',
                 type:'bar',
                 barWidth: '50%',
-                data:[10000, 5000, 7000, 3000, 6000, 8000, 12000, 9000, 2500, 4300, 6100, 7700, 6000, 8000, 12000],
+                data:[10000, 5000, 7000, 3000, 6000, 8000, 12000, 9000],
                 itemStyle: {
                     normal: {
                         color: '#2962ff',
@@ -104,4 +105,4 @@ ThisMonthSales.defaultProps = {
     }
 };
 
-export default ThisMonthSales;
+export default typeofTrainingsConducted;

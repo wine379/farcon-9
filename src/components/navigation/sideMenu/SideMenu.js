@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import * as Icon from 'react-feather';
 import './SideMenu.css';
+import NavigationContext from '../../../context/NavigationContext';
 
 const SideMenu = () => {
+    const navigationContext = useContext(NavigationContext);
     return (
         <div className={"sidemenu-area"}>
                 <Navbar className={"sidemenu"} >
@@ -14,7 +16,7 @@ const SideMenu = () => {
                                 <Icon.Inbox 
                                     className="icon"
                                 /> 
-                                <span className="title">Dashboard</span>
+                                <span onClick={() => navigationContext.navigationStateDispatch({type: 'SET_DASHBOARD'})} className="title">Dashboard</span>
                             </NavLink>
 
                             <NavDropdown title= {
@@ -32,6 +34,7 @@ const SideMenu = () => {
                             }
                             id="basic-nav-dropdown">
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_BLE'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -41,6 +44,7 @@ const SideMenu = () => {
                                     Basic Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_ELE'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu"> 
@@ -50,6 +54,7 @@ const SideMenu = () => {
                                     Enhanced Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_GLE'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -74,6 +79,7 @@ const SideMenu = () => {
                             }
                             id="basic-nav-dropdown">
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_BLP'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -83,6 +89,7 @@ const SideMenu = () => {
                                     Basic Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_ELP'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu"> 
@@ -92,6 +99,7 @@ const SideMenu = () => {
                                     Enhanced Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_GLP'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -116,6 +124,7 @@ const SideMenu = () => {
                             }
                             id="basic-nav-dropdown">
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_GLM'})}
                                     to="/#" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -125,6 +134,7 @@ const SideMenu = () => {
                                     Basic Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_EL'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu"> 
@@ -134,6 +144,7 @@ const SideMenu = () => {
                                     Enhanced Livelihood
                                 </NavLink>
                                 <NavLink 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_GLM'})}
                                     to="/#/" 
                                     className="dropdown-item" 
                                     activeClassName="drpMenu">
@@ -144,14 +155,20 @@ const SideMenu = () => {
                                 </NavLink>
                             </NavDropdown>
 
-                            <NavLink to="/#" className="nav-link">
+                            <NavLink 
+                                to="/#" 
+                                onClick={() => navigationContext.navigationStateDispatch({type: 'SET_REPORTS'})}
+                                className="nav-link">
                                 <Icon.Calendar 
                                     className="icon"
                                 />
                                 <span className="title">Reporting</span>
                             </NavLink>
 
-                            <NavLink to="/#/" className="nav-link">
+                            <NavLink 
+                                to="/#/" 
+                                onClick={() => navigationContext.navigationStateDispatch({type: 'SET_CM'})}
+                                className="nav-link">
                                 <Icon.Book
                                     className="icon"
                                 />
@@ -178,6 +195,7 @@ const SideMenu = () => {
                                 <NavLink  
                                     activeClassName="drpMenu"
                                     to="/#/" 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_UMA'})}
                                     className="dropdown-item">
                                     <Icon.Bell 
                                         className="icon" 
@@ -187,6 +205,7 @@ const SideMenu = () => {
                                 <NavLink 
                                     activeClassName="drpMenu"
                                     to="/#/" 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_RPA'})}
                                     className="dropdown-item"> 
                                     <Icon.Award 
                                         className="icon" 
@@ -197,6 +216,7 @@ const SideMenu = () => {
                                 
                                 <NavLink 
                                     activeClassName="drpMenu"
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_RA'})}
                                     to="/#/" 
                                     className="dropdown-item">
                                 <Icon.FileText
@@ -209,6 +229,7 @@ const SideMenu = () => {
                                 <NavLink 
                                     activeClassName="drpMenu"
                                     to="/#/" 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_LA'})}
                                     className="dropdown-item">
                                     <Icon.ArrowRightCircle 
                                         className="icon" 
@@ -218,6 +239,7 @@ const SideMenu = () => {
                                 <NavLink 
                                     activeClassName="drpMenu"
                                     to="/#/" 
+                                    onClick={() => navigationContext.navigationStateDispatch({type: 'SET_DIA'})}
                                     className="dropdown-item">
                                     <Icon.Layers 
                                         className="icon" 

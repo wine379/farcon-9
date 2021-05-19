@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-class SalesByCountries extends React.Component {
+class SouthernRegionEnrolment extends React.Component {
     render() {
         return (
             <div className="card mb-4 overflow-hidden">
                 <div className="card-body">
                     <div className="card-header">
-                        <h5 className="card-title">Enrolment By Region</h5>
+                        <h5 className="card-title">Southern Region Enrolment</h5>
                     </div>
 
                     <ReactEcharts 
@@ -23,7 +23,7 @@ class SalesByCountries extends React.Component {
     }
 }
 
-SalesByCountries.defaultProps = {
+SouthernRegionEnrolment.defaultProps = {
     data: {
         tooltip: {
             trigger: 'item',
@@ -31,16 +31,19 @@ SalesByCountries.defaultProps = {
         },
         series: [
             {
-                name: 'Region',
+                name: 'Enrolment',
                 type: 'pie',
                 radius: '60%',
                 center: ['50%', '50%'],
                 data:[
-                    {value:635, name:'Southern Region'},
-                    {value:800, name:'Central Region'},
-                    {value:534, name:'Northen Region'},
-                    {value:135, name:'Easten Region'},
-                    {value:148, name:'Western Region'}
+                    {value:34, name:'Basic Livelyhood'},
+                    {value:22, name:'Joint Skill Groups'},
+                    {value:33, name:'Youth Challenge Support'},
+                    {value:22, name:'Cooperative Development'},
+                    {value:22, name:'VC Production'},
+                    {value:32, name:'VC Lesp'},
+                    {value:21, name:'Graduation'},
+                    
                 ],
                 itemStyle: {
                     emphasis: {
@@ -54,4 +57,4 @@ SalesByCountries.defaultProps = {
     }
 };
 
-export default SalesByCountries;
+export default SouthernRegionEnrolment;

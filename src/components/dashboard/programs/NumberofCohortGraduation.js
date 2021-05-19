@@ -1,21 +1,21 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 
-const CompletedOrders = () => {
+const NumberofCohortGraduation = () => {
     return (
-        <div className="stats-card success-card mb-4">
+        <div className="stats-card purple-card mb-4">
             <h3>
-                20,123
+            numberOfCohortsGraduation
                 <Icon.ArrowUpCircle 
                     className="icon"
                 />
             </h3>
-            <p>Enrolled Households</p>
+            <p>Number of Cohort Graduation</p>
             <i 
-                className="lni-check-mark-circle" 
+                className="lni-cart-full" 
             />
         </div>
     );
 };
 
-export default CompletedOrders;
+export default NumberofCohortGraduation;

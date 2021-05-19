@@ -1,19 +1,21 @@
-import React from 'react'
+
+import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-class LastWeekSales extends React.Component {
+class numberofComsipTrainingsConducted extends React.Component {
     render() {
         return (
             <div className="card mb-4">
                 <div className="card-body">
                     <div className="card-header">
-                        <h5 className="card-title">Household Disbursements</h5>
+                        <h5 className="card-title">Types Of Trainings Conducted</h5>
                     </div>
+
                     <ReactEcharts 
                         option={this.props.data} 
-                        style={{height: '407px'}} 
-                        notMerge={true}
-                        lazyUpdate={true}
+                        style={{height: '350px'}} 
+                        notMerge={true} 
+                        lazyUpdate={true} 
                         opts={{renderer: 'svg'}}
                     />
                 </div>
@@ -22,24 +24,26 @@ class LastWeekSales extends React.Component {
     }
 }
 
-LastWeekSales.defaultProps = {
+numberofComsipTrainingsConducted.defaultProps = {
     data: {
-        color: '#2962ff',
+        color: ['#2962ff'],
         tooltip: {
-            trigger: 'none',
-            axisPointer: {
-                type: 'cross'
+            trigger: 'axis',
+            axisPointer : {
+                type : 'shadow'       
             }
         },
         grid: {
             top: '5%',
-            bottom: '20',
-            left: '30',
-            right: '0%',
+            left: '5',
+            right: '0',
+            bottom: '1',
+            containLabel: true
         },
         xAxis: [
             {
-                type: 'category',
+                type : 'category',
+                data : ['Training of Trainers', 'Orientations', 'Sensitization Meetiongs'],
                 axisTick: {
                     alignWithLabel: true
                 },
@@ -54,21 +58,15 @@ LastWeekSales.defaultProps = {
                         shadowOffsetX: 3,
                         shadowOffsetY: 3,
                     }
-                },
-                axisPointer: {
-                    label: {
-                        formatter: function (params) {
-                            return 'Sales' + params.value
-                                + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                        }
-                    }
-                },
-                data: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+                }
             }
         ],
         yAxis: [
             {
-                type: 'value',
+                type : 'value',
+                axisLabel: {
+                    formatter: '$ {value}'
+                },
                 axisLine: {
                     show: true,
                     onZero: false,
@@ -76,18 +74,18 @@ LastWeekSales.defaultProps = {
                         color: '#797979',
                         type: 'solid',
                     }
-                },
-            },
+                }
+            }
         ],
         series: [
             {
-                name:'2018',
-                type:'line',
-                smooth: true,
-                data: [1000, 500, 1200, 700, 1500, 1000, 1200],
+                name:'Total Trainings Conducted',
+                type:'bar',
+                barWidth: '50%',
+                data:[10000, 5000, 7000],
                 itemStyle: {
                     normal: {
-                        color: 'red',
+                        color: '#2962ff',
                         lineStyle: {
                             color: '#2962ff',
                             type: 'solid',
@@ -105,6 +103,6 @@ LastWeekSales.defaultProps = {
             }
         ]
     }
-}
+};
 
-export default LastWeekSales;
+export default numberofComsipTrainingsConducted;

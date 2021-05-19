@@ -1,21 +1,21 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 
-const TotalOrders = () => {
+const CasesReceived = () => {
     return (
-        <div className="stats-card light-blue-card mb-4">
+        <div className="stats-card purple-card mb-4">
             <h3>
-                20,231
+            caseManagementDataCasesReceived
                 <Icon.ArrowUpCircle 
                     className="icon"
                 />
             </h3>
-            <p>Child Headed Households</p>
+            <p>Total Cases Received</p>
             <i 
-                className="lni-shopping-basket" 
+                className="lni-cart-full" 
             />
         </div>
     );
 };
 
-export default TotalOrders;
+export default CasesReceived;

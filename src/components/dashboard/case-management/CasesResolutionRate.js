@@ -1,16 +1,16 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 
-const MonthlySales = () => {
+const CasesResolutionRate = () => {
     return (
         <div className="stats-card purple-card mb-4">
             <h3>
-                1,500,134
+            caseManagementDataCasesResolutionRate
                 <Icon.ArrowUpCircle 
                     className="icon"
                 />
             </h3>
-            <p>Total Households</p>
+            <p>Total Cases Resolution Rate</p>
             <i 
                 className="lni-cart-full" 
             />
@@ -18,4 +18,4 @@ const MonthlySales = () => {
     );
 };
 
-export default MonthlySales;
+export default CasesResolutionRate;
