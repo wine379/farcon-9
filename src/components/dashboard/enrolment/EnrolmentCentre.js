@@ -22,7 +22,10 @@ const EnrolmentCentre = () => {
                 radius: '60%',
                 center: ['50%', '50%'],
                 data:[
-                    {value: 28, name:'Basic Livelyhood'},
+                    {
+                        value: 28, //basicLivelihoodName
+                        name:'Basic Livelyhood'
+                    },
                     {value: 77, name:'Joint Skill Groups'},
                     {value:4, name:'Youth Challenge Support'},
                     {value:23, name:'Cooperative Development'},
