@@ -2,6 +2,7 @@ FROM node as builder
 WORKDIR '/app'
 COPY ./package.json ./
 RUN yarn install
+RUN yarn add node-sass
 COPY . .
 RUN npm run build
 
