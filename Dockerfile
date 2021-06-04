@@ -1,6 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY yarn install
+COPY ./package.json ./
+RUN yarn install
 COPY . .
 RUN npm run build
 
